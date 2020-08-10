@@ -1,150 +1,111 @@
-import React, { useReducer, useState } from "react";
+import React from "react";
 import "../styles/grid.css";
-import { Row, Col, Modal, Button } from "react-bootstrap";
+import { Row, Col, Container } from "react-bootstrap";
 import { topRow, secondRow, sideColumn } from "./images";
 
-import ImageModal from "./modal";
 import Description from "./description";
 
-const GridTwo = ({ selectedColour, value }) => {
-  const [state] = useReducer(null, initState());
-  // const [show, setShow] = useState(false);
-
-  // const handleClose = () => setShow(false);
-  // const handleShow = () => setShow(true);
-
-  console.log("state: ", state);
-
-  function initGrid() {
-    const grid = [];
-    for (let row = 0; row < 5; row++) {
-      const cols = [];
-      for (let col = 0; col < 6; col++) {
-        cols.push({
-          row,
-          col,
-        });
-      }
-      grid.push(cols);
-    }
-    return grid;
-  }
-
-  function initState() {
-    const grid = initGrid();
-    return {
-      grid,
-    };
-  }
-
+const Grid = ({ selectedColour, value }) => {
   const handleClick = (e) => {
     const cell = e.target;
     cell.style.backgroundColor = selectedColour;
     cell.value = value;
     cell.id = value;
-    console.log(cell);
-  };
-
-  const drawGrid = () => {
-    const { grid } = state;
-    return grid.map((row, i) => {
-      return row.map((cell, i) => {
-        return (
-          <div
-            key={cell.row + cell.col}
-            data-item={cell}
-            className="cell cell-border"
-            id="0"
-            value="0"
-            onClick={handleClick}
-            // could change this to be an input ?
-          />
-        );
-      });
-    });
+    console.log(cell.value);
   };
 
   return (
     <div className="game">
-      <Row style={{ flex: "1 0 15%", marginLeft: 15 }} id="top-one">
+      <Row id="top-row">
         {topRow.map((e, i) => {
           return (
             <div className="image">
               <Description e={e} />
-              {/* <Modal.Header closeButton>
-                  <Modal.Title>{e.imageCaption}</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>{e.description}</Modal.Body>
-                <Modal.Footer>
-                  <Button variant="secondary" onClick={handleClose}>
-                    Close
-                  </Button>
-                  <Button variant="primary" onClick={handleClose}>
-                    Save Changes
-                  </Button>
-                </Modal.Footer> */}
-              {/* </Modal> */}
             </div>
           );
         })}
       </Row>
-      <Row className="top-images" style={{ flex: "1 0 15%", marginLeft: 15 }}>
+      <Row className="top-images">
         {secondRow.map((e, i) => {
           return (
             <div className="image">
               <Description e={e} />
-              {/* </Modal> */}
-              {/* <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                  <Modal.Title>{e.imageCaption}</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>{e.description}</Modal.Body>
-                <Modal.Footer>
-                  <Button variant="secondary" onClick={handleClose}>
-                    Close
-                  </Button>
-                  <Button variant="primary" onClick={handleClose}>
-                    Save Changes
-                  </Button>
-                </Modal.Footer>
-              </Modal> */}
             </div>
           );
         })}
       </Row>
-
-      <div className="grid-container">
-        <Col className="side-images">
-          {sideColumn.map((e, i) => {
-            return (
-              <div className="image">
-                <Description e={e} />
-
-                {/* </Modal> */}
-                {/* <Modal show={show} onHide={handleClose}>
-                  <Modal.Header closeButton>
-                    <Modal.Title>{e.imageCaption}</Modal.Title>
-                  </Modal.Header>
-                  <Modal.Body>{e.description}</Modal.Body>
-                  <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
-                      Close
-                    </Button>
-                    <Button variant="primary" onClick={handleClose}>
-                      Save Changes
-                    </Button>
-                  </Modal.Footer>
-                </Modal> */}
-              </div>
-            );
-          })}
-        </Col>
-        <Col>
-          <div className="grid">{drawGrid()}</div>
-        </Col>
+      <div className="mid-section">
+        <Container className="side-container">
+          <Row className="side-images">
+            {sideColumn.map((e, i) => {
+              return (
+                <div className="image">
+                  <Description e={e} />
+                </div>
+              );
+            })}
+          </Row>
+        </Container>
+        <Container className="grid-container">
+          <Row>
+            {Array.from({ length: 6 }).map((_, index) => (
+              <Col
+                key={index}
+                className="cell cell-border"
+                id={index}
+                value={index}
+                onClick={handleClick}
+              ></Col>
+            ))}
+          </Row>
+          <Row>
+            {Array.from({ length: 6 }).map((_, index) => (
+              <Col
+                key={index}
+                className="cell cell-border"
+                id={index}
+                value={index}
+                onClick={handleClick}
+              ></Col>
+            ))}
+          </Row>
+          <Row>
+            {Array.from({ length: 6 }).map((_, index) => (
+              <Col
+                key={index}
+                className="cell cell-border"
+                id={index}
+                value={index}
+                onClick={handleClick}
+              ></Col>
+            ))}
+          </Row>
+          <Row>
+            {Array.from({ length: 6 }).map((_, index) => (
+              <Col
+                key={index}
+                className="cell cell-border"
+                id={index}
+                value={index}
+                onClick={handleClick}
+              ></Col>
+            ))}
+          </Row>
+          <Row>
+            {Array.from({ length: 6 }).map((_, index) => (
+              <Col
+                key={index}
+                className="cell cell-border"
+                id={index}
+                value={index}
+                onClick={handleClick}
+              ></Col>
+            ))}
+          </Row>
+        </Container>
       </div>
     </div>
   );
 };
 
-export default GridTwo;
+export default Grid;

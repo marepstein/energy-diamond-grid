@@ -1,30 +1,35 @@
-/* .grid {
-  width: 40vw;
-  text-align: center;
-}
-
-.col,
-.col-6 {
-  border: solid 1px black;
-  height: 60px;
-  margin: 1px;
-}
-
-.row {
-  padding: 0 20px;
-}
-
-.top-images {
-  padding-left: 100px;
-  display: flex;
-  justify-content: space-around;
-}
-
-@media only screen and (max-width: 780px) {
-  .grid {
-    width: 90vw;
+@media only screen and (min-device-width: 320px) and (max-device-width: 500px) and (-webkit-min-device-pixel-ratio: 2) {
+  .images {
+    max-height: 24px;
+    max-width: 24px;
   }
-} */
+
+  .top-images {
+    margin: 10px 0px 10px 0px !important;
+  }
+
+  .cell-border.col {
+    max-height: 44px;
+    max-width: 44px;
+  }
+
+  .table td {
+    height: 26px !important;
+    width: 26px !important;
+  }
+
+  #others-top,
+  #self-top {
+    max-width: 60px;
+    max-height: 70px;
+  }
+}
+
+@media only screen and (max-device-width: 350px) {
+  .mid-section {
+    padding-right: 0% !important;
+  }
+}
 
 .game {
   display: flex;
@@ -38,47 +43,63 @@
   justify-content: center;
   align-items: center;
   margin-right: 25px;
+  width: 80%;
+  height: 100%;
 }
-
-.grid {
-  width: 250px;
-  height: 250px;
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(5, 1fr);
-  grid-gap: 0;
-  background: rgb(219, 218, 218);
-}
-
-/* mobile: height: 300px; width: 450px; */
 
 .cell {
   display: inline-block;
 }
+
 .cell-border {
   border: 2px solid white;
+  background-color: lightcyan;
+  height: 64px;
+  width: 64px;
+}
+
+.mid-section {
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  padding-right: 30px;
 }
 
 .side-images {
-  margin-right: 10px;
-  width: 44px;
-  height: 250px;
   justify-content: space-evenly;
   display: flex;
   flex-direction: column;
 }
 
+.side-container {
+  width: 20%;
+}
+
 .images {
-  height: 44px;
-  width: 44px;
+  height: 34px;
+  width: 34px;
 }
 
 .top-images {
-  /* justify-content: space-around;
-  display: flex;
-  width: 250px;
-  margin-left: 26px; */
+  flex: 1;
+  width: 70%;
+  justify-content: space-evenly;
+  height: auto;
+  margin: 10px 0px 10px 15px;
 }
+
+#top-row {
+  width: 50%;
+  justify-content: space-between;
+  padding-left: 15px;
+}
+
+#others-top,
+#self-top {
+  width: 80%;
+  height: 85%;
+}
+
 /* .colours {
   height: 40px;
   width: 20px;
@@ -91,27 +112,11 @@
 .colours-container {
   display: flex;
   justify-content: center;
-  margin: 30px 0px 0px 18px;
+  margin-top: 30px;
   border: none;
 }
 
-.table .td {
-  height: 18px;
-}
-
-#top-one {
-  flex: 1;
-  margin-left: 15;
-  width: 70%;
-  justify-content: space-around;
-  align-items: space-around;
-  padding-left: 20px;
-}
-
-#self-top {
-  width: 65px;
-}
-
-#others-top {
-  width: 70px;
+.table td {
+  height: 40px;
+  width: 40px;
 }

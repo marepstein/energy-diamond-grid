@@ -1,4 +1,3 @@
-import React from "react";
 import "../styles/grid.css";
 
 import you from "../images/you.png";
@@ -21,7 +20,7 @@ topRow[0] = {
   image01: new Image(),
   src: you,
   imageCaption: "Your personal development",
-  description: "How well you feel you help yourself",
+  description: "How well you help yourself",
   className: "images",
   id: "self-top",
 };
@@ -29,7 +28,7 @@ topRow[1] = {
   image02: new Image(),
   src: others,
   imageCaption: "Others personal development",
-  description: "How well you feel you help others",
+  description: "How well youhelp others",
   className: "images",
   id: "others-top",
 };
@@ -38,43 +37,43 @@ export const secondRow = [];
 secondRow[0] = {
   image01: new Image(),
   src: aware,
-  imageCaption: "Others personal development",
-  description: "Test1",
+  imageCaption: "How you experience and know",
+  description: "Description goes here...",
   id: "aware",
 };
 secondRow[1] = {
   image02: new Image(),
   src: manage,
-  imageCaption: "Others personal development",
-  description: "Test2",
+  imageCaption: "How you harness and manage",
+  description: "Description goes here...",
   id: "manage",
 };
 secondRow[2] = {
   image03: new Image(),
   src: develop,
-  imageCaption: "Others personal development",
-  description: "Test3",
+  imageCaption: "How you build and develop",
+  description: "Description goes here...",
   id: "develop",
 };
 secondRow[3] = {
   image04: new Image(),
   src: awarei,
-  imageCaption: "Others personal development",
-  description: "How well you feel you help others",
+  imageCaption: "How you help others experience and know",
+  description: "Description goes here...",
   id: "awarei",
 };
 secondRow[4] = {
   image05: new Image(),
   src: managei,
-  imageCaption: "Others personal development",
-  description: "How well you feel you help others",
+  imageCaption: "How you help others harness and manage",
+  description: "Description goes here...",
   id: "managei",
 };
 secondRow[5] = {
   image06: new Image(),
   src: developi,
-  imageCaption: "Others personal development",
-  description: "How well you feel you help others",
+  imageCaption: "How you help others build and develop",
+  description: "Description goes here...",
   id: "developi",
 };
 
@@ -82,35 +81,35 @@ export const sideColumn = [];
 sideColumn[0] = {
   image01: new Image(),
   src: paint,
-  imageCaption: "Others personal development",
-  description: "How well you feel you help others",
+  imageCaption: "Creativity",
+  description: "Description goes here...",
   id: "paint",
 };
 sideColumn[1] = {
   image01: new Image(),
   src: pencil,
-  imageCaption: "Others personal development",
-  description: "How well you feel you help others",
+  imageCaption: "Intellect",
+  description: "Description goes here...",
   id: "pencil",
 };
 sideColumn[2] = {
   image01: new Image(),
   src: link,
-  imageCaption: "Others personal development",
-  description: "How well you feel you help others",
+  imageCaption: "Emotion",
+  description: "Description goes here...",
   id: "link",
 };
 sideColumn[3] = {
   image01: new Image(),
   src: shield,
-  imageCaption: "Others personal development",
-  description: "How well you feel you help others",
+  imageCaption: "Security",
+  description: "Description goes here...",
   id: "shield",
 };
 sideColumn[4] = {
   image01: new Image(),
   src: cog,
-  imageCaption: "Others personal development",
+  imageCaption: "Energy",
   description: "How well you feel you help others",
   id: "cog",
 };

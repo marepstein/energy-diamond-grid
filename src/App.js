@@ -1,15 +1,12 @@
 import React, { useState } from "react";
-import { Container, Col, Row } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 
 import "./styles/App.css";
 
-import GridTwo from "./components/grid-two";
+import Grid from "./components/grid-two";
 import Colours from "./components/colours";
-import Grid from "./components/grid.js";
 
-import imgOne from "./images/screw.png";
-
-function App() {
+const App = () => {
   const [selectedColour, setSelectedColour] = useState();
   const [value, setValue] = useState();
   console.log("App", selectedColour);
@@ -22,22 +19,11 @@ function App() {
   return (
     <div className="App">
       <Container>
-        {/* <Row>
-          <Col sm={4}>
-            <img src={imgOne} style={{ height: 20, width: 20 }} />
-          </Col>
-
-          <Col sm={8}> */}
-        {/* <Grid /> */}
-        <GridTwo selectedColour={selectedColour} value={value} />
-        {/* </Col>
-        </Row> */}
-        {/* <Row> */}
+        <Grid selectedColour={selectedColour} value={value} />
         <Colours onClick={handleClick} />
-        {/* </Row> */}
       </Container>
     </div>
   );
-}
+};
 
 export default App;
